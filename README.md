@@ -1,4 +1,4 @@
-# EV OCPP Federated Intrusion Detection System  
+# A Federated Learning Based Intrusion Detection System for Privacy-Preserving and Robust Monitoring of Electric Vehicle Charging Infrastructure 
 **INSE 6450 – Milestone 1**
 
 ---
