@@ -158,9 +158,8 @@ Run all cells. The notebook will:
 
 ## Citation
 ```
-Dalamagkas, C. et al. (2025). Federated Detection of Open Charge Point Protocol
-1.6 Cyberattacks. arXiv:2502.01569. https://doi.org/10.48550/arXiv.2502.01569
+McMahan, H. B., Moore, E., Ramage, D., Hampson, S., & Aguera y Arcas, B. (2017). Communication-Efficient Learning of Deep Networks from Decentralized Data. International Conference on Artificial Intelligence and Statistics, 1273–1282. http://proceedings.mlr.press/v54/mcmahan17a/mcmahan17a.pdf
 
-McMahan, H. B. et al. (2017). Communication-efficient learning of deep networks
-from decentralized data. AISTATS 2017.
+Dalamagkas, C., Radoglou-Grammatikis, P., Bouzinis, P., Papadopoulos, I., Lagkas, T., Argyriou, V., Goudos, S., Margounakis, D., Fountoukidis, E., & Sarigiannidis, P. (2025). Federated Detection of Open Charge Point Protocol 1.6 Cyberattacks. arXiv:2502.01569.
+
 ```
