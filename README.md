@@ -20,14 +20,14 @@ The task is formulated as a **5-class classification problem**:
 
 ## Milestones
 
-### ✅ Milestone 1 — Data Selection & Exploration
+### Milestone 1 — Data Selection & Exploration
 - Dataset selection and justification
 - Exploratory data analysis (EDA)
 - Missing value and outlier analysis
 - Initial preprocessing and feature engineering
 - **Notebook:** `notebooks/01_data_exploration.ipynb`
 
-### ✅ Milestone 2 — Model Selection, Training & Evaluation
+### Milestone 2 — Model Selection, Training & Evaluation
 - MLP (Deep Neural Network) model design and justification
 - Ablation study: Dummy Baseline vs Small MLP vs Final MLP
 - Full classification metrics: accuracy, F1, AUROC
