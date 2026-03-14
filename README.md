@@ -35,10 +35,22 @@ The task is formulated as a **5-class classification problem**:
 - Deployment design and system-level trade-offs
 - **Notebook:** `notebooks/02_model_training.ipynb`
 
+### Milestone 3 — Robustness, Monitoring & Adaptation
+- Failure mode analysis and risk mitigation (17 failure modes)
+- Stress tests: Gaussian noise, feature masking, OOD, class rarity
+- Adversarial evaluation: FGSM at 6 epsilon levels, white/grey/black-box adversaries
+- Robustness methods: feature jittering augmentation + temperature scaling + confidence abstention
+- Production monitoring dashboard: PSI, Wasserstein, JS divergence, rolling F1
+- Drift simulation across 4 monitoring windows with alerting runbook
+- Adaptation experiment: drift retrain with before/after comparison
+- Model versioning: v1.0 baseline, v1.1 jittered, v1.2 retrained
+- **Notebook:** `notebooks/03_robustness.ipynb`
+
 ---
 
-## Model Performance (Milestone 2)
+## Model Performance
 
+### Milestone 2 — Baseline MLP
 | Metric | Value |
 |---|---|
 | Test Accuracy | 0.9992 |
@@ -48,7 +60,27 @@ The task is formulated as a **5-class classification problem**:
 | Inference Latency p90 | 0.037 ms |
 | Throughput (batch=32) | 565,936 samples/sec |
 | Model Size | 0.071 MB |
-| Parameters | 16,901 |
+| Parameters | 17,157 |
+
+### Milestone 3 — Robustness Results
+| Test | Macro F1 |
+|---|---|
+| Clean baseline | 0.9992 |
+| Gaussian noise σ=0.5 | 0.9938 |
+| Gaussian noise σ=1.0 | 0.9436 |
+| Feature masking 50% | 0.9931 |
+| FGSM ε=0.20 | 0.9907 |
+| FGSM ε=0.30 | 0.9572 |
+| After drift retrain | 0.9992 |
+
+---
+
+## Model Versions
+| Version | File | Description |
+|---|---|---|
+| v1.0 | `outputs/mlp_final_v2.pt` | Baseline MLP — Milestone 2 |
+| v1.1 | `outputs/mlp_jittered.pt` | Jitter augmentation — Milestone 3 |
+| v1.2 | `outputs/mlp_retrained_v1.pt` | Post-drift retrain — Milestone 3 |
 
 ---
 
@@ -65,7 +97,7 @@ data/ocpp_app_layer/Combined/Train.csv   (3,020 samples)
 data/ocpp_app_layer/Combined/Test.csv    (1,295 samples)
 ```
 
-5 balanced classes, 55 columns, no missing values.
+5 balanced classes, 51 numeric features, no missing values.
 
 ---
 
@@ -81,17 +113,21 @@ ev-ocpp-fl-ids/
 │           └── Test.csv
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb
-│   └── 02_model_training.ipynb
+│   ├── 02_model_training.ipynb
+│   └── 03_robustness.ipynb
 ├── src/
 │   ├── preprocessing.py
 │   └── model.py
 └── outputs/
+    ├── mlp_final_v2.pt
+    ├── mlp_jittered.pt
+    ├── mlp_retrained_v1.pt
     └── figures/
-        ├── class_distribution.png
-        ├── correlation_heatmap.png
-        ├── learning_curves.png
-        ├── ablation_comparison.png
-        └── confusion_matrix.png
+        ├── section1_stress_tests.png
+        ├── section2_robustness.png
+        ├── section2_confidence_histograms.png
+        ├── section3_monitoring_dashboard.png
+        └── section4_adaptation.png
 ```
 
 ---
@@ -136,23 +172,12 @@ jupyter notebook notebooks/01_data_exploration.ipynb
 jupyter notebook notebooks/02_model_training.ipynb
 ```
 
-Run all cells. The notebook will:
-- Train the MLP model with early stopping
-- Run the ablation study
-- Print all classification and efficiency metrics
-- Save figures to `outputs/figures/`
+**Milestone 3 — Robustness, Monitoring & Adaptation:**
+```
+jupyter notebook notebooks/03_robustness.ipynb
+```
 
----
-
-## Output Figures
-
-| Figure | Description |
-|---|---|
-| `class_distribution.png` | Class balance in training set |
-| `correlation_heatmap.png` | Feature correlation heatmap |
-| `learning_curves.png` | Loss and accuracy vs epoch |
-| `ablation_comparison.png` | Baseline vs Small MLP vs Final MLP |
-| `confusion_matrix.png` | Per-class predictions on test set |
+Run all cells in order. The notebook will train the jittered model, run FGSM evaluation, temperature scaling, monitoring dashboard, and adaptation experiment automatically.
 
 ---
 
@@ -163,7 +188,7 @@ Communication-Efficient Learning of Deep Networks from Decentralized Data.
 International Conference on Artificial Intelligence and Statistics,
 1273–1282. http://proceedings.mlr.press/v54/mcmahan17a/mcmahan17a.pdf
 
-Dalamagkas, C., Radoglou-Grammatikis, P., Bouzinis, P., Papadopoulos, I., Lagkas, T., Argyriou, V., Goudos, S., 
-Margounakis, D., Fountoukidis, E., & Sarigiannidis, P. (2025). 
+Dalamagkas, C., Radoglou-Grammatikis, P., Bouzinis, P., Papadopoulos, I., Lagkas, T.,
+Argyriou, V., Goudos, S., Margounakis, D., Fountoukidis, E., & Sarigiannidis, P. (2025).
 Federated Detection of Open Charge Point Protocol 1.6 Cyberattacks. arXiv:2502.01569.
 ```
