@@ -191,4 +191,8 @@ International Conference on Artificial Intelligence and Statistics,
 Dalamagkas, C., Radoglou-Grammatikis, P., Bouzinis, P., Papadopoulos, I., Lagkas, T.,
 Argyriou, V., Goudos, S., Margounakis, D., Fountoukidis, E., & Sarigiannidis, P. (2025).
 Federated Detection of Open Charge Point Protocol 1.6 Cyberattacks. arXiv:2502.01569.
+
+Szakály, M., Köhler, T., & Martinovic, I. (2025). Current Affairs: 
+A Security Measurement Study of CCS EV Charging Deployments.
+34th USENIX Security Symposium. USENIX Association
 ```
