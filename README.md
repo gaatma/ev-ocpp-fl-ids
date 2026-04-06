@@ -247,15 +247,44 @@ Each notebook runs independently. Run all cells from top to bottom. All outputs 
 
 ## Citation
 ```
-McMahan, H. B., Moore, E., Ramage, D., Hampson, S., & Aguera y Arcas, B. (2017).
-Communication-Efficient Learning of Deep Networks from Decentralized Data.
-AISTATS. http://proceedings.mlr.press/v54/mcmahan17a/mcmahan17a.pdf
+## Citation & References
 
-Dalamagkas, C., et al. (2025).
+McMahan, H. B., Moore, E., Ramage, D., Hampson, S., & Agüera y Arcas, B. (2017).
+Communication-Efficient Learning of Deep Networks from Decentralized Data.
+AISTATS, 1273–1282.
+http://proceedings.mlr.press/v54/mcmahan17a/mcmahan17a.pdf
+
+Dalamagkas, C., Radoglou-Grammatikis, P., Bouzinis, P., Papadopoulos, I.,
+Lagkas, T., Argyriou, V., Goudos, S., Margounakis, D., Fountoukidis, E.,
+& Sarigiannidis, P. (2025).
 Federated Detection of Open Charge Point Protocol 1.6 Cyberattacks.
-arXiv:2502.01569.
+arXiv:2502.01569. https://doi.org/10.48550/arXiv.2502.01569
 
 Szakály, M., Köhler, T., & Martinovic, I. (2025).
 Current Affairs: A Security Measurement Study of CCS EV Charging Deployments.
 34th USENIX Security Symposium.
+
+Kirkpatrick, J., et al. (2017).
+Overcoming Catastrophic Forgetting in Neural Networks.
+Proceedings of the National Academy of Sciences, 114(13), 3521–3526.
+
+Rolnick, D., Ahuja, A., Schwarz, J., Lillicrap, T., & Wayne, G. (2019).
+Experience Replay for Continual Learning.
+Advances in Neural Information Processing Systems (NeurIPS).
+
+Settles, B. (2009).
+Active Learning Literature Survey.
+University of Wisconsin–Madison, Computer Sciences Technical Report 1648.
+
+Gal, Y., & Ghahramani, Z. (2016).
+Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning.
+ICML, 1050–1059.
+
+Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. (2017).
+On Calibration of Modern Neural Networks.
+ICML, 1321–1330.
+
+Vitter, J. S. (1985).
+Random Sampling with a Reservoir.
+ACM Transactions on Mathematical Software, 11(1), 37–57.
 ```
