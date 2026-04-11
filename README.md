@@ -280,6 +280,10 @@ Gal, Y., & Ghahramani, Z. (2016).
 Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning.
 ICML, 1050–1059.
 
+Goodfellow, I. J., Shlens, J., and Szegedy, C. (2014). 
+Explaining and harnessing adversarial examples. 
+In International Conference on Learning Representations (ICLR).
+
 Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. (2017).
 On Calibration of Modern Neural Networks.
 ICML, 1321–1330.
